@@ -1,0 +1,923 @@
+html {
+    box-sizing: border-box;
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -ms-overflow-style: scrollbar;
+    -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+
+/* Tipo de fuente y tamanio en body, en conjunto con color de letra y background*/
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #2e2e2e;
+    background-color: #fff;
+}
+
+
+/* margenes arriba y final para etiquetas de texto h */
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    margin-bottom: .5rem;
+}
+
+
+/* margenes arriba y final para etiquetas p */
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+
+/* alineacion vertical para img y ningun borde */
+
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+
+/* margin label*/
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+h1,
+h2,
+h3,
+.h1,
+.h2,
+.h3 {
+    margin-bottom: 0.5rem;
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit;
+}
+
+
+/* tamanios de fuente para etiquetas h */
+
+h1,
+.h1 {
+    font-size: 2.5rem;
+}
+
+h2,
+.h2 {
+    font-size: 2rem;
+}
+
+h3,
+.h3 {
+    font-size: 1.75rem;
+}
+
+
+/* Padding y margenes, anchura para los contenedores*/
+
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+
+/* Media querie para centrar contenido de container*/
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+
+/*Atributos para contenedores principales de inputs en registro y login*/
+
+.container-fluid {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
+    width: 100%;
+}
+
+
+/* Caja contenedora para la hilera de inputs en registro, login y en el listado de productos*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+
+/* este se esta utilizando */
+
+.col {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+
+/* Agregar controles sobre los formularios de login y registro*/
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.25rem;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+
+/* Agregar estructura a los formularios en registro y captura de datos de login*/
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+
+/* Atributos para botones de registro y login */
+
+.btn-lg,
+.btn-group-lg>.btn {
+    padding: 0.5rem 1rem;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    border-radius: 0.3rem;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #072151;
+    border-color: #072151;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    transition: all 0.15s ease-in-out;
+}
+
+
+/* Estilo para navbar en registro y login */
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.navbar>.container,
+.navbar>.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Medie queries para nabvar*/
+
+@media (max-width: 575px) {
+    .navbar-expand-sm>.container,
+    .navbar-expand-sm>.container-fluid {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+
+/* estilo de card para productos */
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+}
+
+
+/* padding o amplitud a card */
+
+.card-body {
+    flex: 1 1 auto;
+    padding: 1.25rem;
+}
+
+
+/* este se esta utilizando */
+
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+
+/* Estilo para botones login y registro*/
+
+.bg-primary {
+    background-color: #072151 !important;
+}
+
+
+/* Estilo para botones login y registro hover (colocar mouse por encima de boton)*/
+
+a.bg-primary:focus,
+a.bg-primary:hover {
+    background-color: #030e22 !important;
+}
+
+
+/* Background color para body principal en todas las paginas */
+
+.bg-secondary {
+    background-color: #f7f7f7 !important;
+}
+
+
+/* Tamanio de borde y color que se aplica en botones de login y registro */
+
+.border {
+    border: 1px solid #e9ecef !important;
+}
+
+.border-white {
+    border-color: #fff !important;
+}
+
+
+/* Estilo para alinear items al centro */
+
+.align-items-center {
+    align-items: center !important;
+}
+
+
+/* este se esta utilizando*/
+
+.m-2 {
+    margin: 0.5rem !important;
+}
+
+
+/* este se esta utilizando*/
+
+.ml-2 {
+    margin-left: 0.5rem !important;
+}
+
+
+/* este se esta utilizando*/
+
+.mb-3 {
+    margin-bottom: 1rem !important;
+}
+
+
+/* este se esta utilizando*/
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
+
+
+/* este se esta utilizando*/
+
+.mt-5 {
+    margin-top: 3rem !important;
+}
+
+
+/* Texto a la derecha*/
+
+.text-right {
+    text-align: right !important;
+}
+
+
+/* Centrar texto*/
+
+.text-center {
+    text-align: center !important;
+}
+
+
+/* este se esta utilizando */
+
+.swatch-900 {
+    background-color: #2e2e2e;
+    color: #fff;
+}
+
+
+/* estilo para etiqueta a y mostrarlo como boton*/
+
+.a {
+    display: inline-block;
+    background-color: #072151;
+    border-radius: 10px;
+    border: 4px double #cccccc;
+    color: #eeeeee;
+    text-align: center;
+    font-size: 22px;
+    padding: 8px;
+    width: 150px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.a span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.a span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.a:hover {
+    background-color: #030e22;
+}
+
+.a:hover span {
+    padding-right: 25px;
+}
+
+.a:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+/* Aplicar padding, background color a elementos de vista en dashboard */
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block
+}
+
+
+/* estilo a barra de navegacion en productos y dashboard*/
+
+nav ul {
+    list-style: none
+}
+
+blockquote,
+q {
+    quotes: none
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0
+}
+
+nav {
+    display: inline-block
+}
+
+nav ul li a {
+    background: #fff;
+    padding: 2px 6px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #344;
+    border-radius: 5px
+}
+
+nav ul li a:hover {
+    color: #000
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 10px
+}
+
+nav ul {
+    list-style: none
+}
+
+
+/* borde, padding y margen bottom (abajo) para etiqueta article*/
+
+article {
+    border-bottom: 2px dotted #998;
+    padding-bottom: 20px;
+    margin-bottom: 20px
+}
+
+article h2 {
+    font-weight: normal;
+    margin-bottom: 12px
+}
+
+aside>div {
+    margin: 10px auto;
+    background: #072151;
+    min-height: 150px;
+    padding: 30px 10px;
+    text-align: center;
+    color: #FFF
+}
+
+body>section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px 0px;
+    border-bottom: 1px solid #999;
+    color: #333
+}
+
+#sidebarBackTop {
+    background: #286983;
+    color: #FFF;
+    opacity: 0.8;
+    cursor: pointer;
+    display: block;
+    padding: 5px
+}
+
+
+/* background-color: #072151;
+background-color: #030e22; */
+
+
+/* Clases para sidebar en dashboard*/
+
+#sidebar a.back2Top {
+    text-decoration: none;
+    text-align: center;
+    background: #344;
+    color: #FFF;
+    font-weight: bold;
+    padding: 5px;
+    display: block
+}
+
+#sidebar a.back2Top:hover {
+    background: #456
+}
+
+#sidebarContent {
+    width: 300px;
+    background: #030e22;
+    padding: 10px
+}
+
+#main {
+    margin-left: 320px
+}
+
+#wrapall {
+    padding-top: 60px
+}
+
+#header {
+    max-width: 1000px;
+    overflow: hidden;
+    height: 40px
+}
+
+#wrapall,
+#header {
+    max-width: 1100px;
+    margin: 0 auto
+}
+
+#headerLeft,
+#headerRight {
+    display: inline-block;
+    vertical-align: middle
+}
+
+#headerLeft {
+    text-align: center;
+    width: 100px
+}
+
+#headerRight {
+    height: 40px
+}
+
+#sidebar {
+    float: left;
+    position: absolute
+}
+
+
+/* Responsive para header en dashboard */
+
+@media screen and (max-width:1100px) {
+    header {
+        padding: 10px
+    }
+    #headerLeft {
+        width: auto
+    }
+    #headerRight {
+        width: 60%
+    }
+}
+
+@media screen and (max-width:820px) {
+    #sidebar {
+        display: none
+    }
+    #main {
+        margin-left: 0
+    }
+    .sidebarToggle #sidebar {
+        background: red;
+        display: block
+    }
+    .stick #sidebarContent {
+        bottom: auto
+    }
+    a#logo {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 10px 5px
+    }
+    aside>div {
+        min-height: 20px;
+        padding: 10px
+    }
+    .sidebarToggle #menuToggle {
+        background: #344;
+        color: #FFF
+    }
+}
+
+@media screen and (max-width:600px) {
+    #headerLeft {
+        float: right
+    }
+    #headerRight {
+        height: auto;
+        position: absolute;
+        width: auto;
+        top: 46px;
+        background: #6f9898;
+        left: 0;
+        display: none
+    }
+    .showMobileMenu #headerRight {
+        display: block
+    }
+    nav ul li a {
+        display: block;
+        background: transparent;
+        color: #FFF;
+        text-align: center;
+        font-size: 16px;
+        padding: 3px 29px;
+        line-height: 25px
+    }
+    .showMobileMenu #mobileMenuToggle {
+        background: #344;
+        color: #FFF
+    }
+    nav ul li {
+        display: block;
+        margin: 0
+    }
+    .socialButtons {
+        display: none
+    }
+    header {
+        padding: 3px 10px
+    }
+    #page {
+        padding: 20px 10px
+    }
+    #wrapall {
+        padding-top: 46px
+    }
+    #sidebarContent {
+        right: 0;
+        background: #6f9898
+    }
+    #mobileLogo {
+        display: inline-block;
+        font-size: 17px;
+        padding: 0 3px 0 10px;
+        font-weight: bold;
+        color: #FFF;
+        text-decoration: none
+    }
+    #mobileMenuToggle {
+        display: inline-block
+    }
+}
+
+
+/* Estilo para card de los productos */
+
+body {
+    margin: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .8125rem;
+    font-weight: 400;
+    line-height: 1.5385;
+    color: #333;
+    text-align: left;
+    background-color: #f5f5f5
+}
+
+.mt-50 {
+    margin-top: 50px
+}
+
+.mb-50 {
+    margin-bottom: 50px
+}
+
+.bg-teal-400 {
+    background-color: #26a69a
+}
+
+a {
+    text-decoration: none !important
+}
+
+.small-logo {
+    max-height: 20px;
+}
+
+body {
+    background-color: #110f0fea;
+}
+
+header,
+.alert {
+    z-index: 100;
+}
+
+.description {
+    height: 25px;
+    overflow: hidden;
+    transition: height .3s ease-in .3s;
+}
+
+.description:hover {
+    height: 80px;
+}
+
+.carrito {
+    min-height: 80vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.table__productos {
+    display: flex;
+}
+
+.table__productos>img {
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+
+.table__cantidad>input {
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.hide,
+.remove {
+    display: none;
+}
+.row2col{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.row2col label{
+    background-color: rgb(252, 252, 252);
+    color: rgb(0, 0, 0);
+    text-align: right;
+    padding: 10px;
+}
+.row2col input,
+.row2col textarea{
+    background-color: rgb(243, 243, 243);
+
+}
+.grid_leftaside {
+    background-color: rgb(190, 172, 172);
+    grid-column: 1;
+    grid-row: 2;
+    text-align: center;
+    margin: 5px;
+    padding: 25px;
+}
+header, .main,footer {
+    list-style: none;
+    padding: 0;
+    background: #f6fbfc;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+#main-container{
+margin: 150px auto;
+width: 600px;
+}
+table{
+    background-color: white;
+    text-align: left;
+    width: 100%;
+}
+th,td{
+    border: solid 1 px black;
+    padding: 5px;
+}
+thead{
+    background-color: black;
+    color: white;
+    border-bottom: solid 5px;
+}
